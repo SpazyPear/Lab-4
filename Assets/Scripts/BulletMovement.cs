@@ -23,7 +23,7 @@ public class BulletMovement : MonoBehaviour
         for (int x = activeBullets.Count; x > 0; x--)
         {
             activeBullets[x - 1].transform.position += Vector3.up * Time.deltaTime * bulletSpeed;
-            if (camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y > 1 || camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y < 0)
+            if (camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y > 1.5 || camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y < -0.5)
             {
                 Destroy(activeBullets[x - 1], 1f);
                 activeBullets.RemoveAt(x - 1);
