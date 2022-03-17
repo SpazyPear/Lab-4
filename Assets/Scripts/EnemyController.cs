@@ -48,4 +48,13 @@ public class EnemyController : MonoBehaviour
         GameObject.Instantiate(bullet, transform.localPosition, Quaternion.identity);
         Invoke("EnemyShoot", shootingInterval);
     }
+
+   private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "PlayerBullet")
+        {
+           Destroy(other.gameObject);
+           Destroy(this);
+        }
+    }
 }
