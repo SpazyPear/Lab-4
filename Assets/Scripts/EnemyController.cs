@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject enemyBullet;
     bool moveLeft;
     bool moveRight;
     float enemySpeed;
@@ -45,16 +45,15 @@ public class EnemyController : MonoBehaviour
 
     void EnemyShoot()
     {
-        GameObject.Instantiate(bullet, transform.localPosition, Quaternion.identity);
+        GameObject.Instantiate(enemyBullet, transform.localPosition, Quaternion.identity);
         Invoke("EnemyShoot", shootingInterval);
     }
-
-   private void OnCollisionEnter2D(Collision2D other) 
+ private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "PlayerBullet")
+        if(other.tag == "PlayerBullet")
         {
            Destroy(other.gameObject);
-           Destroy(this);
+           Debug.Log("Shot");
         }
     }
 }
