@@ -8,7 +8,7 @@ public class EnemyBulletMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletSpeed = -0.3f;
+        bulletSpeed = -0.05f;
     }
 
     // Update is called once per frame
