@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class EnemyController : MonoBehaviour
            Destroy(other.gameObject); //Destroy bullet
            Debug.Log("Shot");
            manager.score += enemyPointsWorth; //Add to player score how many points this enemy is worth
+           manager.UpdateScoreUI();
         }
     }
 }
