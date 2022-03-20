@@ -5,6 +5,7 @@ using UnityEngine;
 public class BunkerController : MonoBehaviour
 {
     private int health;
+    SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,9 @@ public class BunkerController : MonoBehaviour
     {
         if (collision.tag == "Bullet" || collision.tag == "PlayerBullet")
         {
-            Debug.Log("A");
             health--;
-            // Change state
+            // Change state for now using transparency instead of new sprite
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f, 1.0f, 0.0f, health / 3.0f);
             if (health == 0)
             {
                 gameObject.SetActive(false);
