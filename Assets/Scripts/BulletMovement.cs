@@ -33,9 +33,9 @@ public class BulletMovement : MonoBehaviour
 
      private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy") //If bullet hits an enemy
         {
-           Destroy(other.gameObject);
+           Destroy(other.gameObject); //Destroy the enemy
            Debug.Log("Detected");
         }
     }
