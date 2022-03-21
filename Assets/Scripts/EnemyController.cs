@@ -60,8 +60,7 @@ public class EnemyController : MonoBehaviour
     {  
         if(other.tag == "PlayerBullet") //If enemy shot by player
         {
-           Destroy(other.gameObject); //Destroy bullet
-           Debug.Log("Shot");
+           manager.EnemyDeath();
            manager.score += enemyPointsWorth; //Add to player score how many points this enemy is worth
            manager.UpdateScoreUI();
         }

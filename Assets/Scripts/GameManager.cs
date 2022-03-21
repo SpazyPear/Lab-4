@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     public Text scoreText;
 
+    public GameObject playerBullet;
+
     public void LoseLife()
     {
         lives--;
@@ -24,5 +26,11 @@ public class GameManager : MonoBehaviour
     public void UpdateScoreUI()
     {
         scoreText.text = score.ToString(); //Update lives UI
+    }
+
+    public void EnemyDeath()
+    {
+        Destroy(playerBullet); //Destroy bullet
+        Debug.Log("Shot");
     }
 }
