@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     float rollTimer;
     bool canRoll = true;
 
+    public float bulletTimerDuration = 0.5f;
+    bool canShoot = true;
 
     void Start()
     {
@@ -30,9 +32,13 @@ public class PlayerMovement : MonoBehaviour
         if (!isRolling)
             transform.position += Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && canShoot)
         {
+            if (bulletMovement.activeBullets.Count > 1)
+                return;
             bulletMovement.activeBullets.Add(Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity));
+            //canShoot = false;
+            // StartCoroutine(bulletTimer());
 
         }
         if (Input.GetKeyDown(KeyCode.Space) && !isRolling && canRoll)
@@ -70,5 +76,16 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
         canRoll = true;
+    }
+
+    IEnumerator bulletTimer()
+    {
+        float bulletTimer = 0;
+        while (bulletTimer < bulletTimerDuration)
+        {
+            bulletTimer += Time.deltaTime;
+            yield return null;
+        }
+        canShoot = true;
     }
 }
