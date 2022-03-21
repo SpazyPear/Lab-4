@@ -11,7 +11,7 @@ public class EnemyBulletMovement : MonoBehaviour
     void Start()
     {
         bulletSpeed = -0.3f;
-        //manager = GameObject.Find("GameManager").GetComponent<GameManager>(); Replaced with passing manager between EnemyController and EnemyBulletMovement
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>(); //Replaced with passing manager between EnemyController and EnemyBulletMovement
     }
 
     // Update is called once per frame

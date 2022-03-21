@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public void LoseLife()
     {
         lives--;
-        livesText.text = score.ToString();
+        livesText.text = lives.ToString();
+        Debug.Log(lives);
         if (lives == 0)
         {
             //Game over logic
