@@ -11,6 +11,7 @@ public class BulletMovement : MonoBehaviour
 
     [SerializeField]
     Camera camera;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,11 @@ public class BulletMovement : MonoBehaviour
         {
            Destroy(other.gameObject); //Destroy the enemy
            Debug.Log("Detected");
+        }
+        if(other.tag == "Bullet") //If bullet hits an enemy
+        {
+           Destroy(other.gameObject); //Destroy enemy's shot
+           Debug.Log("Shot bullet");
         }
     }
 }
