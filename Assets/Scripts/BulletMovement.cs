@@ -21,21 +21,14 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int x = activeBullets.Count - 1; x >= 0; x--)
+        for (int x = activeBullets.Count; x > 0; x--)
         {
-            try
+            activeBullets[x - 1].transform.position += Vector3.up * Time.deltaTime * bulletSpeed;
+            if (camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y > 1.5 || camera.WorldToViewportPoint(activeBullets[x - 1].transform.position).y < -0.5)
             {
-                activeBullets[x].transform.position += Vector3.up * Time.deltaTime * bulletSpeed;
-                if (camera.WorldToViewportPoint(activeBullets[x].transform.position).y > 1.3f || camera.WorldToViewportPoint(activeBullets[x].transform.position).y < -0.5)
-                {
-                    Destroy(activeBullets[x], 1f);
-                    activeBullets.RemoveAt(x);
-                }
-            }
-            catch (MissingReferenceException e)
-            {
-                activeBullets.RemoveAt(x);
-            }
+                Destroy(activeBullets[x - 1], 1f);
+                activeBullets.RemoveAt(x - 1);
+            } 
         }
     }
 

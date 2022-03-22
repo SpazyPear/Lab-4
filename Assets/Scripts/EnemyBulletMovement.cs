@@ -10,7 +10,7 @@ public class EnemyBulletMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletSpeed = -0.3f;
+        bulletSpeed = -0.1f;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>(); //Replaced with passing manager between EnemyController and EnemyBulletMovement
     }
 
