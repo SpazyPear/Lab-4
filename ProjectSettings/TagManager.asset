@@ -8,6 +8,8 @@ TagManager:
   - PlayerBullet
   - Enemy
   - Bunker
+  - Boss
+  - BossBullet
   layers:
   - Default
   - TransparentFX
