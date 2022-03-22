@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootingInterval = 1.5f;
+        shootingInterval = Random.Range(0.0f, 5.0f);
         Invoke("EnemyShoot", shootingInterval);
         enemySpeed = 0.07f;
         moveLeft = true;
