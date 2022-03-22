@@ -56,6 +56,7 @@ public class EnemyController : MonoBehaviour
         Invoke("EnemyShoot", shootingInterval);
     }
 
+    private int Special;
  private void OnTriggerEnter2D(Collider2D other) 
     {  
         if(other.tag == "PlayerBullet") //If enemy shot by player
@@ -63,6 +64,12 @@ public class EnemyController : MonoBehaviour
            manager.EnemyDeath();
            manager.score += enemyPointsWorth; //Add to player score how many points this enemy is worth
            manager.UpdateScoreUI();
+            if (gameObject.tag == "SpecialEnemy")
+            {
+                manager.EnemyDeath();
+                manager.score += Special;//special point value
+                manager.UpdateScoreUI();
+            }
         }
     }
 }

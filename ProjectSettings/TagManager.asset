@@ -10,6 +10,7 @@ TagManager:
   - Bunker
   - Boss
   - BossBullet
+  - SpecialEnemy
   layers:
   - Default
   - TransparentFX

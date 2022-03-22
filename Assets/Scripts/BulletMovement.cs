@@ -45,5 +45,6 @@ public class BulletMovement : MonoBehaviour
            Destroy(other.gameObject); //Destroy the enemy
            Debug.Log("Detected");
         }
+
     }
 }
