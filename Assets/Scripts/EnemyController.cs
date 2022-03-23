@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         shootingInterval = Random.Range(3.0f, 5.0f);
         Invoke("EnemyShoot", shootingInterval);
         enemySpeed = 0.005f;
