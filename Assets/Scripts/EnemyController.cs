@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public GameManager manager;
     public int enemyPointsWorth;
+    public int enemyType;
 
     public GameObject enemyBullet;
     private GameObject mostRecentlyFired;
@@ -24,6 +25,18 @@ public class EnemyController : MonoBehaviour
         enemySpeed = 0.07f;
         moveLeft = true;
         moveRight = false;
+
+        switch (enemyType)
+        {
+            case 0:
+                break;
+            case 1:
+                enemySpeed = 0.14f;
+                break;
+            case 2:
+                shootingInterval = 0.5f;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +49,7 @@ public class EnemyController : MonoBehaviour
         {
             moveLeft = false;
             moveRight = true;
+            // Move enemy down
         }
         }
         if(moveRight && !moveLeft)
@@ -45,7 +59,17 @@ public class EnemyController : MonoBehaviour
         {
             moveRight = false;
             moveLeft = true;
+            // Move enemy down
+            }
         }
+
+        switch (enemyType)
+        {
+            case 0:
+                break;
+            case 1:
+                transform.Translate(new Vector3(0, (Time.deltaTime % 2 - 1) / 50, 0));
+                break;
         }
     }
 

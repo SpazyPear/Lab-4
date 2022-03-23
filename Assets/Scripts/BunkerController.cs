@@ -29,6 +29,7 @@ public class BunkerController : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+            collision.gameObject.SetActive(false);
         }
     }
 }
