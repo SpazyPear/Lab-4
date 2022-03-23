@@ -1052,8 +1052,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50426e1ff411cb488139200cc8d3864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
-  spawnPoints: []
+  waves:
+  - name: 1
+    enemy: {fileID: 3222403600308079850, guid: c5778a4ac10884fc28042645331feaa1, type: 3}
+    count: 10
+    rate: 1
+  - name: 2
+    enemy: {fileID: 5269320369511765751, guid: 453c16b2250be484590bdb2cf87e0c87, type: 3}
+    count: 10
+    rate: 1
+  - name: 3
+    enemy: {fileID: 7523087838575091540, guid: 3a177d80f65d544b4a54b088c3cfef37, type: 3}
+    count: 10
+    rate: 1
+  spawnPoints:
+  - {fileID: 856023418}
+  - {fileID: 1758065938}
   timeBetweenWaves: 5
 --- !u!4 &2127334015
 Transform:

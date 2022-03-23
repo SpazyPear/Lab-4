@@ -49,6 +49,7 @@ public class EnemyController : MonoBehaviour
             {
                 moveLeft = false;
                 moveRight = true;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             }
         }
         if(moveRight && !moveLeft)
@@ -58,6 +59,7 @@ public class EnemyController : MonoBehaviour
             {
                 moveRight = false;
                 moveLeft = true;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             }
         }
         if (enemyType == 1)
