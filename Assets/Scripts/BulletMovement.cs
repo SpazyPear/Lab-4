@@ -38,6 +38,7 @@ public class BulletMovement : MonoBehaviour
         {
            Destroy(other.gameObject); //Destroy the enemy
            Debug.Log("Detected");
+            gameObject.SetActive(false);
         }
         if(other.tag == "Bullet") //If bullet hits an enemy
         {

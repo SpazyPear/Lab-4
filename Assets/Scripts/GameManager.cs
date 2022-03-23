@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,10 @@ public class GameManager : MonoBehaviour
         Debug.Log(lives);
         if (lives == 0)
         {
-            //Game over logic
+            //Save score to player preferences
+            PlayerPrefs.SetInt("Score", score);
+
+            SceneManager.LoadScene("EndScene");
         }
     }
 
