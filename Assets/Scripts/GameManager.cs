@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void EnemyDeath()
     {
-        Destroy(playerBullet); //Destroy bullet
+        //Destroy(playerBullet); //Destroy bullet
         Debug.Log("Shot");
     }
 

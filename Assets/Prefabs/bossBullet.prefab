@@ -148,6 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   test: 
-  EnemyShoot: {fileID: 0}
-  Explode: {fileID: 0}
+  EnemyShoot: {fileID: 8300000, guid: b9ece45674ed79048b611419d7bff77e, type: 3}
+  Explode: {fileID: 8300000, guid: f16e0a8331c85ca428d2af8f172df279, type: 3}
   manager: {fileID: 0}
