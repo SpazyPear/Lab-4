@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e7f9d1532d84104b1d92a4a6a81786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 4264817727237054021, guid: e36f122191382234b862656d12dcb280, type: 3}
+  manager: {fileID: 0}
   enemyPointsWorth: 400
   enemyType: 1
   enemyBullet: {fileID: 4778220232041826866, guid: e0c96c9edcfd049a39379620d82b5744, type: 3}
