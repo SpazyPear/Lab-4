@@ -41,12 +41,28 @@ public class GameManager : MonoBehaviour
     //all enemies die let go boss
     public GameObject bossPref;
     private GameObject boss;
+    public bool bossStage;
     private void Update()
     {
         if (GameObject.FindGameObjectWithTag("Enemy") == null & GameObject.FindGameObjectWithTag("Boss") == null)
         {
+            //bossStage = true;
+            //Should use an INVOKE here, for the boss to come out
+            //Invoke("letsgoboss",3);
             boss = GameObject.Instantiate(bossPref, new Vector3(0, 0, 0), Quaternion.identity);
         }
+        else
+        {
+            //bossStage = false;
+        }
+        if (bossStage)
+        {
+            //boss = GameObject.Instantiate(bossPref, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+    }
+    private void letsgoboss()
+    {
+        //boss = GameObject.Instantiate(bossPref, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
 }

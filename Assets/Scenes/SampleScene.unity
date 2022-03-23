@@ -157,6 +157,8 @@ MonoBehaviour:
   livesText: {fileID: 1932759993}
   scoreText: {fileID: 672687744}
   playerBullet: {fileID: 0}
+  bossPref: {fileID: 1023309932905325487, guid: fa0286f5077fb8c499c78ec97e183a1a, type: 3}
+  bossStage: 0
 --- !u!4 &241558429
 Transform:
   m_ObjectHideFlags: 0
