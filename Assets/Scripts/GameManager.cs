@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
 
     public GameObject playerBullet;
-
+   
     public void LoseLife()
     {
         lives--;
@@ -33,4 +33,16 @@ public class GameManager : MonoBehaviour
         Destroy(playerBullet); //Destroy bullet
         Debug.Log("Shot");
     }
+
+    //all enemies die let go boss
+    public GameObject bossPref;
+    private GameObject boss;
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") == null & GameObject.FindGameObjectWithTag("Boss") == null)
+        {
+            boss = GameObject.Instantiate(bossPref, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+    }
+
 }
