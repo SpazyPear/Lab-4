@@ -20,9 +20,9 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootingInterval = Random.Range(0.0f, 5.0f);
+        shootingInterval = Random.Range(3.0f, 5.0f);
         Invoke("EnemyShoot", shootingInterval);
-        enemySpeed = 0.07f;
+        enemySpeed = 0.005f;
         moveLeft = true;
         moveRight = false;
 
@@ -31,10 +31,10 @@ public class EnemyController : MonoBehaviour
             case 0:
                 break;
             case 1:
-                enemySpeed = 0.14f;
+                enemySpeed = 0.01f;
                 break;
             case 2:
-                shootingInterval = 0.5f;
+                shootingInterval = Random.Range(1.5f, 3.0f);
                 break;
         }
     }
@@ -65,13 +65,9 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        switch (enemyType)
+        if (enemyType == 1)
         {
-            case 0:
-                break;
-            case 1:
-                transform.Translate(new Vector3(0, (Time.deltaTime % 2 - 1) / 50, 0));
-                break;
+            transform.Translate(new Vector3(0, transform.position.x / 1200, 0));
         }
     }
 
@@ -86,9 +82,11 @@ public class EnemyController : MonoBehaviour
     {  
         if(other.tag == "PlayerBullet") //If enemy shot by player
         {
-           manager.EnemyDeath();
-           manager.score += enemyPointsWorth; //Add to player score how many points this enemy is worth
-           manager.UpdateScoreUI();
+            manager.EnemyDeath();
+            manager.score += enemyPointsWorth; //Add to player score how many points this enemy is worth
+            manager.UpdateScoreUI();
+
+            other.gameObject.SetActive(false);
         }
     }
 }
