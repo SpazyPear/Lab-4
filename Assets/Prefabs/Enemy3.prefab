@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   enemyPointsWorth: 0
+  enemyType: 2
   enemyBullet: {fileID: 0}
 --- !u!61 &91094858813168587
 BoxCollider2D:
