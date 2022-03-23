@@ -38,15 +38,15 @@ public class BulletMovement : MonoBehaviour
     {
         if(other.tag == "Enemy") //If bullet hits an enemy
         {
-           Destroy(other.gameObject); //Destroy the enemy
+            Destroy(other.gameObject); //Destroy the enemy
             AudioSource.PlayClipAtPoint(Explode, transform.position, 1f);
             Debug.Log("Detected");
             gameObject.SetActive(false);
         }
         if(other.tag == "Bullet") //If bullet hits an enemy
         {
-           Destroy(other.gameObject); //Destroy enemy's shot
-           Debug.Log("Shot bullet");
+            Destroy(other.gameObject); //Destroy enemy's shot
+            Debug.Log("Shot bullet");
         }
     }
 }

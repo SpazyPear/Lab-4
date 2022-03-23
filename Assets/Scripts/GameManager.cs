@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public bool bossStage;
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Enemy") == null & GameObject.FindGameObjectWithTag("Boss") == null)
+        if (GameObject.FindGameObjectWithTag("Enemy") == null & GameObject.FindGameObjectWithTag("Boss") == null & bossStage)
         {
             //bossStage = true;
             //Should use an INVOKE here, for the boss to come out
