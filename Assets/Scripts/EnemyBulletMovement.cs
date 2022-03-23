@@ -7,6 +7,8 @@ public class EnemyBulletMovement : MonoBehaviour
     float bulletSpeed;
     public GameManager manager;
 
+    public AudioClip Explode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class EnemyBulletMovement : MonoBehaviour
         if (other.tag == "Player") //If bullet hits a player
         {
             manager.LoseLife();
+            AudioSource.PlayClipAtPoint(Explode, transform.position, 1f);
         }
     }
 }

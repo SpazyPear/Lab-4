@@ -103,6 +103,7 @@ MonoBehaviour:
   activeBullets: []
   bulletSpeed: 6
   camera: {fileID: 0}
+  Explode: {fileID: 8300000, guid: f16e0a8331c85ca428d2af8f172df279, type: 3}
 --- !u!61 &-4385116655269513634
 BoxCollider2D:
   m_ObjectHideFlags: 0

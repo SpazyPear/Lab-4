@@ -9,6 +9,9 @@ public class BossBullet : MonoBehaviour
     [SerializeField]
     public string test;
 
+    public AudioClip EnemyShoot;
+    public AudioClip Explode;
+
     public GameManager manager;
 
     // Start is called before the first frame update
@@ -74,7 +77,9 @@ public class BossBullet : MonoBehaviour
     {
         if (other.tag == "Player") //If bullet hits a player
         {
+            AudioSource.PlayClipAtPoint(Explode, transform.position, 1f);
             manager.LoseLife();
+
         }
     }
 }

@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float bulletTimerDuration = 0.5f;
     bool canShoot = true;
 
+    public AudioClip Shoot;
+
     void Start()
     {
         
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && canShoot)
         {
+            AudioSource.PlayClipAtPoint(Shoot, transform.position, 1f);
             if (bulletMovement.activeBullets.Count > 1)
                 return;
             bulletMovement.activeBullets.Add(Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity));

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  Explode: {fileID: 8300000, guid: f16e0a8331c85ca428d2af8f172df279, type: 3}
 --- !u!61 &3664005983291801941
 BoxCollider2D:
   m_ObjectHideFlags: 0
