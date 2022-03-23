@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public GameManager manager;
     public int enemyPointsWorth;
+    public int enemyType;
 
     public GameObject enemyBullet;
     private GameObject mostRecentlyFired;
@@ -19,33 +20,49 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootingInterval = Random.Range(0.0f, 5.0f);
+        shootingInterval = Random.Range(3.0f, 5.0f);
         Invoke("EnemyShoot", shootingInterval);
-        enemySpeed = 0.07f;
+        enemySpeed = 0.005f;
         moveLeft = true;
         moveRight = false;
+
+        switch (enemyType)
+        {
+            case 0:
+                break;
+            case 1:
+                enemySpeed = 0.01f;
+                break;
+            case 2:
+                shootingInterval = Random.Range(1.5f, 3.0f);
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-         if(moveLeft && !moveRight)
+        if(moveLeft && !moveRight)
         {
-           transform.Translate(new Vector3(enemySpeed, 0, 0)); //move left
-        if(transform.position.x>8)
-        {
-            moveLeft = false;
-            moveRight = true;
-        }
+            transform.Translate(new Vector3(enemySpeed, 0, 0)); //move left
+            if(transform.position.x>8)
+            {
+                moveLeft = false;
+                moveRight = true;
+            }
         }
         if(moveRight && !moveLeft)
         {
-        transform.Translate(new Vector3(-enemySpeed, 0, 0)); //move right
-        if(transform.position.x<-8)
-        {
-            moveRight = false;
-            moveLeft = true;
+            transform.Translate(new Vector3(-enemySpeed, 0, 0)); //move right
+            if(transform.position.x<-8)
+            {
+                moveRight = false;
+                moveLeft = true;
+            }
         }
+        if (enemyType == 1)
+        {
+            transform.Translate(new Vector3(0, transform.position.x / 1200, 0));
         }
     }
 
@@ -57,6 +74,7 @@ public class EnemyController : MonoBehaviour
     }
 
     private int Special;
+
  private void OnTriggerEnter2D(Collider2D other) 
     {  
         if(other.tag == "PlayerBullet") //If enemy shot by player
@@ -70,6 +88,8 @@ public class EnemyController : MonoBehaviour
                 manager.score += Special;//special point value
                 manager.UpdateScoreUI();
             }
+
+            other.gameObject.SetActive(false);
         }
     }
 }

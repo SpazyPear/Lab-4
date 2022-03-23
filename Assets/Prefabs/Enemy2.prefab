@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  enemyPointsWorth: 0
-  enemyType: 1
+  enemyPointsWorth: 400
   enemyBullet: {fileID: 4778220232041826866, guid: e0c96c9edcfd049a39379620d82b5744, type: 3}
 --- !u!61 &-5106668803786519613
 BoxCollider2D:
